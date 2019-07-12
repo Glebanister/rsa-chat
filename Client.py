@@ -6,7 +6,7 @@ from colors import colors
 from functions import *
 
 DATA_PORTION = 1024
-HOST = 'localhost'
+HOST = '165.22.241.85'
 PORT = 2000
 CONNECTED_TO_SERVER = r'CID: *'
 CHAT_REQUEST_TYPE = r'[0-9][0-9][0-9].[0-9][0-9][0-9].REQUEST*'
