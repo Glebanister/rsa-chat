@@ -1,6 +1,5 @@
 RSA-protected chat.
-- Run Server.py on server (on localhost maybe)
-- Set server's adress to HOST variable in Client.py (localhost by default)
 - Run Client.py on client's computer
-- Run at least one more client
-- Start dialog following yellow instructions
+- to start conversation: 'cid: x', where x - cid of other client
+- to see all online users cid's: 'c'
+- to send message in current chat: 'me: mesage'
