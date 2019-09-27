@@ -4,10 +4,9 @@ import sys
 import Client
 from time import sleep
 from collections import deque
-from functions import *
+from lib.functions import isMatch, getNumbersFromString, throwPrefix
+from connection import HOST, PORT
 
-HOST = ''
-PORT = 2000
 DATA_PORTION = 1024
 N_CONNECTIONS = 5
 MAX_CONNECTIONS = 256

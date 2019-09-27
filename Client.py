@@ -1,12 +1,12 @@
 import socket
 import threading
 import sys
-import rsa
-from colors import colors
-from functions import *
+import lib.rsa as rsa
+from lib.colors import colors
+from lib.functions import throwPrefix, getNumbersFromString, isMatch
+from connection import HOST, PORT
 
 DATA_PORTION = 1024
-HOST = '165.22.241.85'
 PORT = 2000
 CONNECTED_TO_SERVER = r'CID: *'
 CHAT_REQUEST_TYPE = r'[0-9][0-9][0-9].[0-9][0-9][0-9].REQUEST*'
@@ -35,8 +35,7 @@ class Client:
         self.log("started making keys")
         self.keys = rsa.rsa()
         self.log("finished")
-        self.private, self.public, self.module = self.keys[
-            "private"], self.keys["public"], self.keys["module"]
+        self.private, self.public, self.module = self.keys["private"], self.keys["public"], self.keys["module"]
         self.curCoModule = -1
         self.curCoPublic = -1
         self.curCoCid = -1
@@ -135,7 +134,7 @@ def main():
     while True:
         req = input()
         if (isMatch(req, MESSAGE)):
-            c.sendMessage(req[3:])
+            c.sendMessage(req[3:19])
         elif (isMatch(req, CID)):
             if (inChat):
                 c.sendMessage("**left the chat**")
